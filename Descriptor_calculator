@@ -1,0 +1,48 @@
+package padeldescriptor;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.GnuParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+
+public class TestExample {
+	
+	public static void main(String agrs[]) {
+
+		String savePath = "C:\\miya\\DescriptorCalculator\\DCTest\\WebContent\\upload";
+		String fileName = "Molecule.smi";
+		
+		/**
+		   String directory = savePath;
+		   String descriptorFile = fileName;
+		   boolean compute2D = false;
+		   boolean compute3D = false;
+		   boolean computeFingerprints = false;
+		   boolean removeSalt = true;
+		   boolean detectAromaticity = true;
+		   boolean standardizeTautomers = false;
+		   String[] tautomerList = null;
+		   boolean standardizeNitro = true;
+		   boolean retain3D = false;
+		   boolean convert3D = false;
+		   **/
+		   
+		PaDELDescriptorApp pdapp = new PaDELDescriptorApp();
+		
+		
+		String[] args = {"-dir", "C:\\miya\\DescriptorCalculator\\DCTest\\WebContent\\upload\\Molecule.smi", 
+						"-file", "C:\\miya\\DescriptorCalculator\\DCTest\\WebContent\\upload\\test7.csv",
+						"-2d","true"};
+		//String[] args = {"-dir "+ savePath+ "\\" + fileName + " -file " + "test5" + ".csv"};
+		   
+		        	
+		pdapp.launchCommandLine(args);
+		
+	}
+
+}
